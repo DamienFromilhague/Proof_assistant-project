@@ -37,17 +37,6 @@ let rec string_of_ty (t : ty) : string =
   | False -> "\u{22a5}"  
   | Nat -> "\u{2115}"  
 
-let rec raw_of_ty ty =
-  match ty with
-  | TVar v -> v
-  | Imp (t1, t2) -> "Imp(" ^ raw_of_ty t1 ^ "," ^ raw_of_ty t2 ^ ")"
-  | And (t1, t2) -> "And(" ^ raw_of_ty t1 ^ "," ^ raw_of_ty t2 ^ ")"
-  | Or (t1, t2) -> "Or(" ^ raw_of_ty t1 ^ "," ^ raw_of_ty t2 ^ ")"
-  | True -> "True"
-  | False -> "False"  
-  | Nat -> "Nat"  
-
-
 let rec string_of_tm (t : tm) : string = 
   match t with
   | Var a -> a
